@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashFragment">
+    tools:context=".ui.SplashFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,20 +17,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/helpingumbrella" />
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:fontFamily="casual"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#71C5BD"
-        android:textSize="48sp"
-        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/screenshot_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="QuickSupport" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

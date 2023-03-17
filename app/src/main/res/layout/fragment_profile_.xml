@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#5576AA"
-    tools:context=".Profile_Fragment">
+    tools:context=".ui.Profile_Fragment">
 
     <Button
         android:id="@+id/save_profile"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
-        android:text="To be Supporter"
+        android:text="To be A Supporter"
         android:textAlignment="center"
         android:textColor="#0B300C"
         android:textSize="18sp"

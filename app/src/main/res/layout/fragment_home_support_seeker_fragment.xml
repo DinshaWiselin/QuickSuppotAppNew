@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeSupportSeeker_fragment">
+    tools:context=".ui.HomeSupportSeeker_fragment">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_naviHome"
@@ -17,12 +17,17 @@
         app:menu="@menu/bottom_navihome" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/HomesupSeekerRecycler"
         android:layout_width="409dp"
         android:layout_height="675dp"
+        android:orientation="vertical"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/bottom_naviHome"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/supporter_listitem"/>
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/supporter_listitem" />
 </androidx.constraintlayout.widget.ConstraintLayout>

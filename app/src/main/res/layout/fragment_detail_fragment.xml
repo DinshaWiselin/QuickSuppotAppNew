@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Detail_fragment">
+    tools:context=".ui.Detail_fragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/detailcard"
@@ -27,6 +27,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/description_detail2"
+                android:layout_width="225dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description_detail" />
+
+            <TextView
+                android:id="@+id/description_detail3"
+                android:layout_width="225dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description_detail2" />
+
+            <TextView
+                android:id="@+id/description_detail4"
+                android:layout_width="225dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="32dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description_detail3" />
+
             <ImageView
                 android:id="@+id/image_detail"
                 android:layout_width="wrap_content"
@@ -47,10 +77,10 @@
 
             <TextView
                 android:id="@+id/description_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="225dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="28dp"
                 android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar_detail" />
@@ -67,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_naviprofile" />
+        app:menu="@menu/bottom_navihome" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"

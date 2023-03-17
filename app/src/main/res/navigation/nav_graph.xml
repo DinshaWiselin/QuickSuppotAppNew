@@ -3,41 +3,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeSupportSeeker_fragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/logIn_fragment"
-        android:name="com.example.quicksuppotapp.LogIn_fragment"
+        android:name="com.example.quicksuppotapp.ui.LogIn_fragment"
         android:label="fragment_log_in_fragment"
-        tools:layout="@layout/fragment_log_in_fragment" />
+        tools:layout="@layout/fragment_log_in_fragment" >
+        <action
+            android:id="@+id/action_logIn_fragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+    </fragment>
     <fragment
         android:id="@+id/welcome_fragment"
-        android:name="com.example.quicksuppotapp.Welcome_fragment"
+        android:name="com.example.quicksuppotapp.ui.Welcome_fragment"
         android:label="fragment_welcome_fragment"
-        tools:layout="@layout/fragment_welcome_fragment" />
+        tools:layout="@layout/fragment_welcome_fragment" >
+        <action
+            android:id="@+id/action_welcome_fragment_to_logIn_fragment"
+            app:destination="@id/logIn_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/profile_Fragment"
-        android:name="com.example.quicksuppotapp.Profile_Fragment"
+        android:name="com.example.quicksuppotapp.ui.Profile_Fragment"
         android:label="fragment_profile_"
-        tools:layout="@layout/fragment_profile_" />
+        tools:layout="@layout/fragment_profile_" >
+        <action
+            android:id="@+id/action_profile_Fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeSupporter_fragment"
-        android:name="com.example.quicksuppotapp.HomeSupporter_fragment"
+        android:name="com.example.quicksuppotapp.ui.HomeSupporter_fragment"
         android:label="fragment_home_supporter_fragment"
-        tools:layout="@layout/fragment_home_supporter_fragment" />
+        tools:layout="@layout/fragment_home_supporter_fragment" >
+        <action
+            android:id="@+id/action_homeSupporter_fragment_to_profile_Fragment"
+            app:destination="@id/profile_Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeSupportSeeker_fragment"
-        android:name="com.example.quicksuppotapp.HomeSupportSeeker_fragment"
+        android:name="com.example.quicksuppotapp.ui.HomeSupportSeeker_fragment"
         android:label="fragment_home_support_seeker_fragment"
-        tools:layout="@layout/fragment_home_support_seeker_fragment" />
+        tools:layout="@layout/fragment_home_support_seeker_fragment" >
+        <action
+            android:id="@+id/action_homeSupportSeeker_fragment_to_profile_supporter"
+            app:destination="@id/profile_supporter" />
+    </fragment>
     <fragment
         android:id="@+id/detail_fragment"
-        android:name="com.example.quicksuppotapp.Detail_fragment"
+        android:name="com.example.quicksuppotapp.ui.Detail_fragment"
         android:label="fragment_detail_fragment"
-        tools:layout="@layout/fragment_detail_fragment" />
+        tools:layout="@layout/fragment_detail_fragment" >
+        <action
+            android:id="@+id/action_detail_fragment_to_homeSupporter_fragment"
+            app:destination="@id/homeSupporter_fragment" />
+        <action
+            android:id="@+id/action_detail_fragment_to_homeSupportSeeker_fragment"
+            app:destination="@id/homeSupportSeeker_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.quicksuppotapp.SplashFragment"
+        android:name="com.example.quicksuppotapp.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -46,12 +73,23 @@
     </fragment>
     <fragment
         android:id="@+id/supportFragment"
-        android:name="com.example.quicksuppotapp.SupportFragment"
+        android:name="com.example.quicksuppotapp.ui.SupportFragment"
         android:label="fragment_support"
-        tools:layout="@layout/fragment_support" />
+        tools:layout="@layout/fragment_support" >
+        <action
+            android:id="@+id/action_supportFragment_to_profile_Fragment"
+            app:destination="@id/profile_Fragment" />
+        <action
+            android:id="@+id/action_supportFragment_to_profile_supporter"
+            app:destination="@id/profile_supporter" />
+    </fragment>
     <fragment
         android:id="@+id/profile_supporter"
-        android:name="com.example.quicksuppotapp.profile_supporter"
+        android:name="com.example.quicksuppotapp.ui.profile_supporter"
         android:label="fragment_profile_supporter"
-        tools:layout="@layout/fragment_profile_supporter" />
+        tools:layout="@layout/fragment_profile_supporter" >
+        <action
+            android:id="@+id/action_profile_supporter_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+    </fragment>
 </navigation>

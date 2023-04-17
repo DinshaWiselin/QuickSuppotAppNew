@@ -5,9 +5,9 @@
         android:id="@+id/homeSupporter_fragment"
         android:icon="@drawable/home_icon"/>
     <item android:title="Profile"
-        android:id="@+id/profile_Fragment"
+        android:id="@+id/profile_supporter"
         android:icon="@drawable/search_icon"/>
-    <item android:title="Mails"
-        android:id="@+id/detail_fragment"
-        android:icon="@drawable/email_icon"/>
+    <item
+        android:icon="@drawable/email_icon"
+        android:title="Chat" />
 </menu>

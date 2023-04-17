@@ -2,27 +2,18 @@ package com.example.quicksuppotapp.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.quicksuppotapp.data.model.ProfileDataSupSeeker
 import com.example.quicksuppotapp.data.model.ProfileDataSupporter
-import com.example.quicksuppotapp.databinding.SupportListitemBinding
 import com.example.quicksuppotapp.databinding.SupporterListitemBinding
+import com.example.quicksuppotapp.ui.HomeSupportSeeker_fragmentDirections
 
 class SupportSeekerAdapter(private val supporterProfile: MutableList<ProfileDataSupporter>)
                           : RecyclerView.Adapter<SupportSeekerAdapter.SupportSeekerViewHolder>()
 {
-
+    val dataset=supporterProfile
     class SupportSeekerViewHolder(val binding: SupporterListitemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-             fun supporterbind(supporter:ProfileDataSupporter){
-            binding.namesupporter.text=supporter.name
-            binding.locationsupporter.text=supporter.location
-            binding.typeofsupport.text=supporter.duration.toString()
-
-
-        }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SupportSeekerViewHolder {
@@ -37,6 +28,15 @@ class SupportSeekerAdapter(private val supporterProfile: MutableList<ProfileData
     }
 
     override fun onBindViewHolder(holder: SupportSeekerViewHolder, position: Int) {
-      holder.supporterbind(supporterProfile.get(position))
+        val supportseeker = dataset[position]
+        holder.binding.photosupporter.setImageResource(supportseeker.img)
+        holder.binding.namesupporter.text=supportseeker.name
+        holder.binding.locationsupporter.text=supportseeker.location
+        holder.binding.typeofsupport.text=supportseeker.supporttype
+
+        holder.binding.supportercard.setOnClickListener {
+            holder.itemView.findNavController()
+                .navigate(HomeSupportSeeker_fragmentDirections.actionHomeSupportSeekerFragmentToDetailFragment(supportseeker.name))
+        }
     }
 }

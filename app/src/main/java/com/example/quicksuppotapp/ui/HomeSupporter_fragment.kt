@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -21,21 +23,37 @@ class HomeSupporter_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         binding= FragmentHomeSupporterFragmentBinding.inflate(inflater)
+        //setSupportActionBar(binding.toolbar2))
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+         viewModel.loadQuotes()
+        viewModel.quotes.observe(viewLifecycleOwner) {
+            if (it != null) {
+                binding.textView3.text=it.content
+            }
+        }
+
         val supporterAdapter =SupporterAdapter(viewModel.support.value!!)
         binding.HomeSupporterRecycler.adapter=supporterAdapter
 
-        /*val snapHelper= PagerSnapHelper()
+       /* val snapHelper= PagerSnapHelper()
         snapHelper.attachToRecyclerView(binding.HomeSupporterRecycler)*/
-
+       // binding.toolbarsuporter.setLogo(R.drawable.filter1)
+     binding.filterSupporter.setOnClickListener {
+      findNavController().navigate(HomeSupporter_fragmentDirections.actionHomeSupporterFragmentToPopUpFragment())
+     }
         binding.bottomNavigationView.setupWithNavController(findNavController())
+        binding.bottomNavigationView.selectedItemId=R.id.homeSupporter_fragment
+       binding.toolbarsuporter.setNavigationOnClickListener{
+           findNavController().navigateUp()
+       }
     }
 
 

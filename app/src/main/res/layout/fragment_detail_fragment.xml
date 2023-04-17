@@ -8,7 +8,7 @@
     tools:context=".ui.Detail_fragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/detailcard"
+        android:id="@+id/SupporterCard"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -28,34 +28,40 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/description_detail2"
+                android:id="@+id/supporterLocation"
                 android:layout_width="225dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="24dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description_detail" />
+                app:layout_constraintTop_toBottomOf="@+id/supporterName" />
 
             <TextView
-                android:id="@+id/description_detail3"
+                android:id="@+id/supporterEmail"
                 android:layout_width="225dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="24dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description_detail2" />
+                app:layout_constraintTop_toBottomOf="@+id/supporterLocation" />
 
             <TextView
-                android:id="@+id/description_detail4"
+                android:id="@+id/supportercontact"
                 android:layout_width="225dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="32dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description_detail3" />
+                app:layout_constraintTop_toBottomOf="@+id/supporterEmail" />
+
+            <TextView
+                android:id="@+id/supporterskills"
+                android:layout_width="225dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="84dp"
+                app:layout_constraintEnd_toEndOf="@+id/supportercontact"
+                app:layout_constraintStart_toStartOf="@+id/supportercontact"
+                app:layout_constraintTop_toBottomOf="@+id/supporterEmail" />
 
             <ImageView
                 android:id="@+id/image_detail"
@@ -76,14 +82,25 @@
                 app:layout_constraintTop_toBottomOf="@+id/image_detail" />
 
             <TextView
-                android:id="@+id/description_detail"
+                android:id="@+id/supporterName"
                 android:layout_width="225dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="28dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar_detail" />
+
+            <Button
+                android:id="@+id/contactsuporterbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="245dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="21dp"
+                android:text="Contact"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

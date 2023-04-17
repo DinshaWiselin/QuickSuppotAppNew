@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="QUICK">#5576AA</color>
+    <color name="green">#0A2321</color>
+    <color name="liladark">#24025E</color>
+    <color name="a1">#02332E</color>
 </resources>

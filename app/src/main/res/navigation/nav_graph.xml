@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/welcome_fragment">
 
     <fragment
         android:id="@+id/logIn_fragment"
@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_welcome_fragment_to_logIn_fragment"
             app:destination="@id/logIn_fragment" />
+        <action
+            android:id="@+id/action_welcome_fragment_to_signup2"
+            app:destination="@id/signup2" />
     </fragment>
     <fragment
         android:id="@+id/profile_Fragment"
@@ -29,8 +32,11 @@
         android:label="fragment_profile_"
         tools:layout="@layout/fragment_profile_" >
         <action
-            android:id="@+id/action_profile_Fragment_to_detail_fragment"
-            app:destination="@id/detail_fragment" />
+            android:id="@+id/action_profile_Fragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_profile_Fragment_to_homeSupportSeeker_fragment"
+            app:destination="@id/homeSupportSeeker_fragment" />
     </fragment>
     <fragment
         android:id="@+id/homeSupporter_fragment"
@@ -40,12 +46,24 @@
         <action
             android:id="@+id/action_homeSupporter_fragment_to_profile_Fragment"
             app:destination="@id/profile_Fragment" />
+        <action
+            android:id="@+id/action_homeSupporter_fragment_to_detailSupportFragment"
+            app:destination="@id/detailSupportFragment" />
+        <action
+            android:id="@+id/action_homeSupporter_fragment_to_popUp_fragment"
+            app:destination="@id/popUp_fragment" />
     </fragment>
     <fragment
         android:id="@+id/homeSupportSeeker_fragment"
         android:name="com.example.quicksuppotapp.ui.HomeSupportSeeker_fragment"
         android:label="fragment_home_support_seeker_fragment"
         tools:layout="@layout/fragment_home_support_seeker_fragment" >
+        <action
+            android:id="@+id/action_homeSupportSeeker_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+        <action
+            android:id="@+id/action_homeSupportSeeker_fragment_to_popup_SupportSeeker"
+            app:destination="@id/popup_SupportSeeker" />
         <action
             android:id="@+id/action_homeSupportSeeker_fragment_to_profile_supporter"
             app:destination="@id/profile_supporter" />
@@ -55,12 +73,9 @@
         android:name="com.example.quicksuppotapp.ui.Detail_fragment"
         android:label="fragment_detail_fragment"
         tools:layout="@layout/fragment_detail_fragment" >
-        <action
-            android:id="@+id/action_detail_fragment_to_homeSupporter_fragment"
-            app:destination="@id/homeSupporter_fragment" />
-        <action
-            android:id="@+id/action_detail_fragment_to_homeSupportSeeker_fragment"
-            app:destination="@id/homeSupportSeeker_fragment" />
+        <argument
+            android:name="supseekName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -89,7 +104,31 @@
         android:label="fragment_profile_supporter"
         tools:layout="@layout/fragment_profile_supporter" >
         <action
-            android:id="@+id/action_profile_supporter_to_detail_fragment"
-            app:destination="@id/detail_fragment" />
+            android:id="@+id/action_profile_supporter_to_homeSupporter_fragment"
+            app:destination="@id/homeSupporter_fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailSupportFragment"
+        android:name="com.example.quicksuppotapp.ui.DetailSupportFragment"
+        android:label="fragment_detail_support"
+        tools:layout="@layout/fragment_detail_support" >
+        <argument
+            android:name="supName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/popUp_fragment"
+        android:name="com.example.quicksuppotapp.ui.PopUp_fragment"
+        android:label="PopUp_fragment"
+        tools:layout="@layout/fragment_popup"/>
+    <fragment
+        android:id="@+id/popup_SupportSeeker"
+        android:name="com.example.quicksuppotapp.ui.PopupSupportSeeker"
+        android:label="fragment_popup__support_seeker"
+        tools:layout="@layout/fragment_popup__support_seeker" />
+    <fragment
+        android:id="@+id/signup2"
+        android:name="com.example.quicksuppotapp.ui.signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" />
 </navigation>

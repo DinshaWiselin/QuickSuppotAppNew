@@ -43,11 +43,11 @@
         android:id="@+id/supporter_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/variant2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar4" />
 
     <EditText
         android:id="@+id/name_sup_profile"
@@ -134,5 +134,19 @@
         app:layout_constraintEnd_toEndOf="@+id/skill_sup_profile"
         app:layout_constraintStart_toStartOf="@+id/skill_sup_profile"
         app:layout_constraintTop_toBottomOf="@+id/skill_sup_profile" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar4"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

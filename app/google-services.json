@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "95734637897",
+    "project_id": "quicksupportapp",
+    "storage_bucket": "quicksupportapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95734637897:android:cb31356127baa01fe16698",
+        "android_client_info": {
+          "package_name": "com.example.quicksuppotapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95734637897-m3c88l8rr8jrmggg9qvlvn3epls6mdos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quicksuppotapp",
+            "certificate_hash": "c6a9ec415ffc5d521825b6067d26fa6a2b57a3ac"
+          }
+        },
+        {
+          "client_id": "95734637897-02vagjpofmsa2te0ugr46og5nosbtfst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP7BFaCb3BFGXaT3Nmi3Y6BMobQCKg8Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95734637897-02vagjpofmsa2te0ugr46og5nosbtfst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

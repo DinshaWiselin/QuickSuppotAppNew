@@ -1,10 +1,12 @@
 package com.example.quicksuppotapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -20,7 +22,7 @@ import com.example.quicksuppotapp.databinding.FragmentHomeSupportSeekerFragmentB
  */
 class HomeSupportSeeker_fragment : Fragment() {
       private lateinit var binding:FragmentHomeSupportSeekerFragmentBinding
-    private val viewModel:QuickSupportViewModel by viewModels()
+    private val viewModel:QuickSupportViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,15 +36,30 @@ class HomeSupportSeeker_fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.loadQuotes()
+        viewModel.quotes.observe(viewLifecycleOwner) {
+            if (it != null)
+            {
+                binding.textView.text=it.content
 
+            }
+        }
+      Log.d("HomesupSeeker recycler",viewModel.supporter.value.toString())
         val supSeekerAdapter = SupportSeekerAdapter(viewModel.supporter.value!!)
         binding.HomesupSeekerRecycler.adapter=supSeekerAdapter
-
         binding.bottomNaviHome.setupWithNavController(findNavController())
-
+        binding.bottomNaviHome.selectedItemId=R.id.homeSupportSeeker_fragment
        /* val snapHelper= PagerSnapHelper()
         snapHelper.attachToRecyclerView(binding.HomesupSeekerRecycler)*/
 
+        binding.filterSupportSeeker.setOnClickListener {
+            findNavController()
+                .navigate(HomeSupportSeeker_fragmentDirections.actionHomeSupportSeekerFragmentToPopupSupportSeeker())
+        }
+
+        binding.toolbarSupseeker.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
 

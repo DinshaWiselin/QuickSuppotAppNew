@@ -5,8 +5,7 @@ data class ProfileDataSupporter(
     val surname:String,
     val location:String,
     val email:String,
-    val contactno:Int,
+    val contactno:String,
     val supporttype:String,
-    val preis:Double,
-    val duration:Int
+    val img:Int
     )

@@ -21,6 +21,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
+        android:layout_marginTop="8dp"
+        android:background="@color/a1"
+        android:backgroundTint="@color/a1"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/bottom_naviHome"
@@ -34,7 +37,7 @@
         android:id="@+id/toolbarSupseeker"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/QUICK"
+        android:background="@color/a1"
         android:minHeight="?attr/actionBarSize"
         android:textAlignment="center"
         android:theme="?attr/actionBarTheme"
@@ -42,7 +45,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/back_icon"
-        app:title="Supporter List" />
+        app:title="Supporter List"
+        app:titleTextColor="#FFFFFF" />
 
     <ImageView
         android:id="@+id/filterSupportSeeker"
@@ -58,7 +62,13 @@
         android:id="@+id/cardView3"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/a1"
+        android:backgroundTint="@color/a1"
+        app:cardBackgroundColor="@color/a1"
+        app:cardCornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarSupseeker">
@@ -67,34 +77,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ScrollView
-                android:id="@+id/scrollView2"
-                android:layout_width="409dp"
-                android:layout_height="98dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" />
-            </ScrollView>
-
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/quotestextviewid"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="TextView"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/scrollView2"
-                app:layout_constraintStart_toStartOf="@+id/scrollView2"
-                app:layout_constraintTop_toTopOf="@+id/scrollView2" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

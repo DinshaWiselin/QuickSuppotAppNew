@@ -10,8 +10,8 @@
         android:layout_width="300dp"
         android:layout_height="175dp"
         android:layout_marginTop="8dp"
-        android:background="@color/QUICK"
-        android:backgroundTint="#5576A9"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,22 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/photosupporter"
-                android:layout_width="115dp"
-                android:layout_height="113dp"
-                android:layout_marginStart="50dp"
-                app:layout_constraintBottom_toTopOf="@+id/ratingBar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/variant2" />
-
             <RatingBar
                 android:id="@+id/ratingBar"
                 android:layout_width="239dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="28dp"
+                android:backgroundTint="@color/a1"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/photosupporter"
                 app:layout_constraintVertical_bias="0.0" />
@@ -45,32 +36,65 @@
                 android:id="@+id/namesupporter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.441"
-                app:layout_constraintStart_toEndOf="@+id/photosupporter"
+                android:layout_marginTop="8dp"
+                android:text="name"
+                android:textColor="@color/a1"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/locationsupporter"
+                app:layout_constraintStart_toStartOf="@+id/locationsupporter"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/locationsupporter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/namesupporter"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/namesupporter"
+                android:textColor="@color/a1"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/typeofsupport"
+                app:layout_constraintStart_toStartOf="@+id/typeofsupport"
                 app:layout_constraintTop_toBottomOf="@+id/namesupporter" />
 
             <TextView
                 android:id="@+id/typeofsupport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:text="TextView"
-                app:layout_constraintStart_toStartOf="@+id/locationsupporter"
+                android:textColor="@color/a1"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/card"
                 app:layout_constraintTop_toBottomOf="@+id/locationsupporter" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="60dp"
+                app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/photosupporter"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/variant2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

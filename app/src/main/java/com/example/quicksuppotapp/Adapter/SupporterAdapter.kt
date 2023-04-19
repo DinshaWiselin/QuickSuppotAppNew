@@ -12,32 +12,36 @@ import com.example.quicksuppotapp.ui.HomeSupporter_fragmentDirections
 class SupporterAdapter(private val supportProfile: MutableList<ProfileDataSupSeeker>)
     : RecyclerView.Adapter<SupporterAdapter.SupporterViewHolder>()  {
 
-    val dataset=supportProfile
+      var dataset=supportProfile
 
-   inner class SupporterViewHolder(val binding: SupportListitemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class SupporterViewHolder(val binding: SupportListitemBinding)
+        : RecyclerView.ViewHolder(binding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SupporterViewHolder {
-
-       val binding =SupportListitemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return SupporterViewHolder(binding)
+      val binding =SupportListitemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+      return SupporterViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
-       return supportProfile.size
+      return supportProfile.size
     }
 
     override fun onBindViewHolder(holder: SupporterViewHolder, position: Int) {
-          val supporter = dataset[position]
+        val supporter = dataset[position]
         //holder.binding.supportpreis.text=supporter.preis.toString()
-        //holder.binding=supporter.img
         holder.binding.supportcity.text=supporter.location
-        holder.binding.supportduration.text=supporter.preisdetail.toString()
+        holder.binding.supportpreis.text=supporter.preisdetail.toString()
         holder.binding.supporttype.text=supporter.supporttype
-        holder.binding.supoortcard.setOnClickListener {
-        holder.itemView.findNavController()
+        holder.binding.supseekName.text=supporter.name
+
+        holder.binding.supoortcard.setOnClickListener{
+            holder.itemView.findNavController()
             .navigate(HomeSupporter_fragmentDirections.actionHomeSupporterFragmentToDetailSupportFragment(supporter.name))
-      }
+       }
+    }
+    fun setData(newDataset:MutableList<ProfileDataSupSeeker>){
+        dataset=newDataset
+        notifyDataSetChanged()
     }
 }

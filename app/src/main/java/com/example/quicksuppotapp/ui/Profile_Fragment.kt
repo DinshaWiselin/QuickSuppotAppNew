@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.quicksuppotapp.Adapter.SupporterAdapter
@@ -14,7 +15,7 @@ import com.example.quicksuppotapp.databinding.FragmentProfileBinding
 
 class Profile_Fragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
-    private val viewModel:QuickSupportViewModel by viewModels()
+    private val viewModel:QuickSupportViewModel by activityViewModels()
     private lateinit var adapter: SupporterAdapter
     private lateinit var supseekerProfile:MutableList<ProfileDataSupSeeker>
 
@@ -31,7 +32,8 @@ class Profile_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.materialToolbar3.setNavigationOnClickListener{
-            findNavController().navigateUp()
+
+            findNavController().navigate(Profile_FragmentDirections.actionProfileFragmentToHomeSupportSeekerFragment())
         }
 
         binding.saveProfile.setOnClickListener {

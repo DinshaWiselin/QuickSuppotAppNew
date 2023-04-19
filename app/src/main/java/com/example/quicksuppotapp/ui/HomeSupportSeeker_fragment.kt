@@ -29,6 +29,7 @@ class HomeSupportSeeker_fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         binding= FragmentHomeSupportSeekerFragmentBinding.inflate(inflater)
         return binding.root
     }
@@ -40,10 +41,17 @@ class HomeSupportSeeker_fragment : Fragment() {
         viewModel.quotes.observe(viewLifecycleOwner) {
             if (it != null)
             {
-                binding.textView.text=it.content
-
+                binding.quotestextviewid.text=it.random().quote
             }
         }
+       /* viewModel.loadEmojis()
+        viewModel.emojis.observe(viewLifecycleOwner) {
+            if (it != null)
+            {
+               // binding.textView.text=it.content
+
+            }
+        }*/
       Log.d("HomesupSeeker recycler",viewModel.supporter.value.toString())
         val supSeekerAdapter = SupportSeekerAdapter(viewModel.supporter.value!!)
         binding.HomesupSeekerRecycler.adapter=supSeekerAdapter
@@ -52,13 +60,16 @@ class HomeSupportSeeker_fragment : Fragment() {
        /* val snapHelper= PagerSnapHelper()
         snapHelper.attachToRecyclerView(binding.HomesupSeekerRecycler)*/
 
+        viewModel.supporter.observe(viewLifecycleOwner){
+         supSeekerAdapter.setData(it)
+        }
         binding.filterSupportSeeker.setOnClickListener {
             findNavController()
                 .navigate(HomeSupportSeeker_fragmentDirections.actionHomeSupportSeekerFragmentToPopupSupportSeeker())
         }
 
         binding.toolbarSupseeker.setNavigationOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.supportFragment)
         }
     }
 

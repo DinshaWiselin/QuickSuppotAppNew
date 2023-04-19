@@ -31,14 +31,14 @@ class SupportFragment : Fragment() {
             }
             else{
                 val mail =it.email.toString()
-                Toast.makeText(requireContext(),"hai $mail",Toast.LENGTH_SHORT).show()
+               // Toast.makeText(requireContext(),"hai $mail",Toast.LENGTH_SHORT).show()
             }
         }
     binding.LetSupport.setOnClickListener {
-        findNavController().navigate(R.id.homeSupporter_fragment)
+        findNavController().navigate(SupportFragmentDirections.actionSupportFragmentToHomeSupporterFragment())
     }
         binding.GetSupport.setOnClickListener {
-            findNavController().navigate(R.id.homeSupportSeeker_fragment)
+            findNavController().navigate(SupportFragmentDirections.actionSupportFragmentToHomeSupportSeekerFragment())
         }
 
         binding.logouttext.setOnClickListener {

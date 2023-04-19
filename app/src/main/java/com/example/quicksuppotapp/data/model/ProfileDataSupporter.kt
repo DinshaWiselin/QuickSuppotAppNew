@@ -6,6 +6,17 @@ data class ProfileDataSupporter(
     val location:String,
     val email:String,
     val contactno:String,
-    val supporttype:String,
-    val img:Int
-    )
+    val supporttype:String
+    ){
+    var img:Int?=null
+    constructor(
+        name: String,
+        surname:String,
+        location:String,
+        email:String,
+        contactno:String,
+        supporttype:String,
+        img : Int) : this(name,surname,location,email,contactno,supporttype) {
+        this.img= img
+    }
+}

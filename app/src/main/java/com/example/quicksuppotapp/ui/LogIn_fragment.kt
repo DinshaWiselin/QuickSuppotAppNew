@@ -59,7 +59,7 @@ class LogIn_fragment : Fragment() {
             }
         }
         binding.register.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(LogIn_fragmentDirections.actionLogInFragmentToSignup2())
         }
 
     }

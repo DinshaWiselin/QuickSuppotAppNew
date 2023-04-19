@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toolbar
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -17,7 +18,7 @@ import com.example.quicksuppotapp.databinding.FragmentHomeSupporterFragmentBindi
 
 class HomeSupporter_fragment : Fragment() {
      private lateinit var binding: FragmentHomeSupporterFragmentBinding
-     private val viewModel:QuickSupportViewModel by viewModels()
+     private val viewModel:QuickSupportViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,16 +34,27 @@ class HomeSupporter_fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-         viewModel.loadQuotes()
-        viewModel.quotes.observe(viewLifecycleOwner) {
+        viewModel.loadNewQuotes()
+        viewModel.quotes1.observe(viewLifecycleOwner) {
             if (it != null) {
-                binding.textView3.text=it.content
+                binding.quotestextview.text=it.random().quote
             }
         }
+
+        /*viewModel.loadEmojis()
+        viewModel.emojis.observe(viewLifecycleOwner) {
+            if (it != null) {
+                //binding.textView3.text=it
+                binding.emojiimg.setImageResource(it.image)
+            }
+        }*/
 
         val supporterAdapter =SupporterAdapter(viewModel.support.value!!)
         binding.HomeSupporterRecycler.adapter=supporterAdapter
 
+        viewModel.support.observe(viewLifecycleOwner){
+            supporterAdapter.setData(it)
+        }
        /* val snapHelper= PagerSnapHelper()
         snapHelper.attachToRecyclerView(binding.HomeSupporterRecycler)*/
        // binding.toolbarsuporter.setLogo(R.drawable.filter1)
@@ -52,7 +64,7 @@ class HomeSupporter_fragment : Fragment() {
         binding.bottomNavigationView.setupWithNavController(findNavController())
         binding.bottomNavigationView.selectedItemId=R.id.homeSupporter_fragment
        binding.toolbarsuporter.setNavigationOnClickListener{
-           findNavController().navigateUp()
+           findNavController().navigate(R.id.supportFragment)
        }
     }
 

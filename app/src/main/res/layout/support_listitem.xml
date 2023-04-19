@@ -11,7 +11,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/QUICK"
+        android:backgroundTint="@color/white"
         android:orientation="vertical"
         app:cardCornerRadius="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,22 +25,26 @@
 
             <TextView
                 android:id="@+id/supportpreis"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="28dp"
                 android:text="12euro/h"
+                android:textColor="@color/a1"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.63"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/supporttype"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="12euro/h" />
 
             <TextView
                 android:id="@+id/supportcity"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
+                android:textColor="@color/a1"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/supportpreis"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/supportpreis"
@@ -48,11 +52,13 @@
                 tools:text="Berlin" />
 
             <TextView
-                android:id="@+id/supportduration"
-                android:layout_width="wrap_content"
+                android:id="@+id/supseekName"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
+                android:textColor="@color/a1"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/supportcity"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/supportcity"
@@ -60,12 +66,15 @@
 
             <TextView
                 android:id="@+id/supporttype"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="66dp"
                 android:layout_marginBottom="65dp"
                 android:text="TextView"
+                android:textColor="@color/a1"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

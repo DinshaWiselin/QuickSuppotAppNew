@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcome_fragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/logIn_fragment"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_logIn_fragment_to_supportFragment"
             app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_logIn_fragment_to_signup2"
+            app:destination="@id/signup2" />
     </fragment>
     <fragment
         android:id="@+id/welcome_fragment"
@@ -92,11 +95,11 @@
         android:label="fragment_support"
         tools:layout="@layout/fragment_support" >
         <action
-            android:id="@+id/action_supportFragment_to_profile_Fragment"
-            app:destination="@id/profile_Fragment" />
+            android:id="@+id/action_supportFragment_to_homeSupporter_fragment"
+            app:destination="@id/homeSupporter_fragment" />
         <action
-            android:id="@+id/action_supportFragment_to_profile_supporter"
-            app:destination="@id/profile_supporter" />
+            android:id="@+id/action_supportFragment_to_homeSupportSeeker_fragment"
+            app:destination="@id/homeSupportSeeker_fragment" />
     </fragment>
     <fragment
         android:id="@+id/profile_supporter"
@@ -106,6 +109,9 @@
         <action
             android:id="@+id/action_profile_supporter_to_homeSupporter_fragment"
             app:destination="@id/homeSupporter_fragment" />
+        <action
+            android:id="@+id/action_profile_supporter_to_supportFragment"
+            app:destination="@id/supportFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailSupportFragment"
@@ -131,4 +137,9 @@
         android:name="com.example.quicksuppotapp.ui.signup"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.quicksuppotapp.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 </navigation>

@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/QUICK"
+        android:backgroundTint="@color/a1"
         app:cardCornerRadius="35dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navi"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,78 +29,117 @@
 
             <TextView
                 android:id="@+id/supporterLocation"
-                android:layout_width="225dp"
+                android:layout_width="0dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/supporterName"
+                app:layout_constraintStart_toStartOf="@+id/supporterName"
                 app:layout_constraintTop_toBottomOf="@+id/supporterName" />
 
             <TextView
                 android:id="@+id/supporterEmail"
-                android:layout_width="225dp"
+                android:layout_width="0dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/supporterLocation"
+                app:layout_constraintStart_toStartOf="@+id/supporterLocation"
                 app:layout_constraintTop_toBottomOf="@+id/supporterLocation" />
 
             <TextView
                 android:id="@+id/supportercontact"
-                android:layout_width="225dp"
+                android:layout_width="0dp"
                 android:layout_height="36dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/supporterEmail"
+                app:layout_constraintStart_toStartOf="@+id/supporterEmail"
                 app:layout_constraintTop_toBottomOf="@+id/supporterEmail" />
 
             <TextView
                 android:id="@+id/supporterskills"
-                android:layout_width="225dp"
+                android:layout_width="0dp"
                 android:layout_height="36dp"
-                android:layout_marginTop="84dp"
+                android:layout_marginTop="24dp"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/supportercontact"
                 app:layout_constraintStart_toStartOf="@+id/supportercontact"
-                app:layout_constraintTop_toBottomOf="@+id/supporterEmail" />
-
-            <ImageView
-                android:id="@+id/image_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/variant2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/supportercontact" />
 
             <RatingBar
                 android:id="@+id/ratingBar_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="#0FFFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_detail" />
+                android:layout_marginTop="32dp"
+                android:background="@color/a1"
+                app:layout_constraintEnd_toEndOf="@+id/imagesupporter"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="@+id/imagesupporter"
+                app:layout_constraintTop_toBottomOf="@+id/imagesupporter" />
 
             <TextView
                 android:id="@+id/supporterName"
-                android:layout_width="225dp"
+                android:layout_width="250dp"
                 android:layout_height="36dp"
-                android:layout_marginTop="28dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#FFFFFF"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/ratingBar_detail"
+                app:layout_constraintStart_toStartOf="@+id/ratingBar_detail"
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar_detail" />
 
             <Button
                 android:id="@+id/contactsuporterbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="245dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="21dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#FFFFFF"
                 android:text="Contact"
+                android:textColor="@color/a1"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imagesupporter"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="1dp"
+                app:cardCornerRadius="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/image_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/variant2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -114,18 +153,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navihome" />
+        app:menu="@menu/bottom_naviprofilesubseeker" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/QUICK"
+        android:background="@color/a1"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/back_icon" />
+        app:navigationIcon="@drawable/back_icon"
+        app:titleTextColor="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

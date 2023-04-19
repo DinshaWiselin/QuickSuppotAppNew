@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -16,7 +17,7 @@ import com.example.quicksuppotapp.databinding.FragmentDetailFragmentBinding
 
 class Detail_fragment : Fragment() {
     private lateinit var binding:FragmentDetailFragmentBinding
-    private val viewModel:QuickSupportViewModel by viewModels()
+    private val viewModel:QuickSupportViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +39,9 @@ class Detail_fragment : Fragment() {
                 viewModel.setSupSeek(supporter)
             }
             viewModel.supseek.observe(viewLifecycleOwner) {
-            binding.imageDetail.setImageResource(it.img)
+                if (it.img!=null) {
+                    binding.imageDetail.setImageResource(it.img!!)
+                }
              binding.supporterName.text=it.name
              binding.supporterLocation.text=it.location
              binding.supporterEmail.text=it.email

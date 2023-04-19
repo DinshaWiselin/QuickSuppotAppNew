@@ -46,8 +46,13 @@ class QuickSupportViewModel :ViewModel(){
     val supporter: LiveData<MutableList<ProfileDataSupporter>>
         get() = _supporter
 
-    private val repository = AppRepository(QuotesApi)
-    val quotes = repository.quotesData
+    private val repository1 = AppRepository(QuotesApi)
+    val quotes = repository1.quotesData
+
+    private val repository =NewAppRepository(NewQuoteApi)
+    val quotes1 = repository.quotesData
+
+
 
     fun signup(email: String,password: String){
         firebaseAuth.createUserWithEmailAndPassword(email,password)
@@ -81,9 +86,15 @@ class QuickSupportViewModel :ViewModel(){
         firebaseAuth.signOut()
         _currentUser.value=firebaseAuth.currentUser
     }
-    fun loadQuotes() {
+  fun loadQuotes() {
         viewModelScope.launch {
-            repository.getQuotes("de")
+            repository1.getQuotes(10)
+
+        }
+    }
+    fun loadNewQuotes() {
+        viewModelScope.launch {
+            repository.getQuotes(10)
 
         }
     }
